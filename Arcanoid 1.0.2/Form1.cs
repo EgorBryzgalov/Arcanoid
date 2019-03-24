@@ -47,7 +47,7 @@ namespace Arcanoid
                 switch (radioButton.Text)
                 {
                     case "Легко":
-                        speed = 6;
+                        speed = 7;
                         break;
                     case "Средне":
                         speed = 10;
