@@ -47,13 +47,13 @@ namespace Arcanoid
                 switch (radioButton.Text)
                 {
                     case "Легко":
-                        speed = 7;
+                        speed = 3;
                         break;
                     case "Средне":
-                        speed = 10;
+                        speed = 6;
                         break;
                     case "Сложно":
-                        speed = 14;
+                        speed = 7;
                         break;
                 }
             }

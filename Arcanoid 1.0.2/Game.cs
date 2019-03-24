@@ -122,23 +122,26 @@ namespace Arcanoid
             bullet.Move();
             int index=0;
             bool allowdelete = false;
-            foreach (Block b in blocks)
+            if (bullet.GetExtends().UpperY <= (blocks[blocks.Count - 1].GetExtends().BottomY))
             {
-                                
-                if (CheckCollision(b))
+                foreach (Block b in blocks)
                 {
-                    index = blocks.IndexOf(b);
-                    allowdelete = true;                                     
+
+                    if (CheckCollision(b))
+                    {
+                        index = blocks.IndexOf(b);
+                        allowdelete = true;
+                    }
                 }
-            }
-            try
-            {
-               if (allowdelete) blocks.RemoveAt(index);
-                allowdelete = false;
-            }
-            catch (IndexOutOfRangeException)
-            {
-                Win();
+                try
+                {
+                    if (allowdelete) blocks.RemoveAt(index);
+                    allowdelete = false;
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    Win();
+                }
             }
         }
         public void OnRightKey()
